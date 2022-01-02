@@ -1,11 +1,31 @@
 {
   "name": "spacebar-ui",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.14",
+  "private": false,
+  "description": "React UI components brought to you by Space Bar Keepers (spacebarkeepers.com).",
+  "author": "Space Bar Keepers (Karel Dohnal, Bára Marešová)",
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "spacebarkeepers, snackbar"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpaceBarKeepers/spacebar-ui"
+  },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "core-js": "^3.20.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -35,5 +55,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.7",
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7"
   }
 }

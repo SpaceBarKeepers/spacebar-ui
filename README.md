@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# spacebar-ui React component library
 
+Created and maintained by [Space Bar Keepers](https://spacebarkeepers.com).
+
+## Installation
+`npm i spacebar-ui`
+
+## Available Components
+### Snackbar
+#### Import component:
+`import { Snackbar } from "spacebar-ui"`
+#### Attributes:
+##### snackbarOpen [required]
+State with boolean value. Determines visibility of Snackbar.\
+type: boolean
+##### setSnackbarOpen [required]
+Function for changing *snackbarOpen* state.\
+type: function
+##### snackbarMessage [required]
+String with Snackbar message.\
+type: string
+##### snackbarVariant [optional]
+Predefined color variations. If specified *color* and *backgroundColor* attributes become ineffective. \
+type: string\
+valid values:
+- "success" (green background, white text)
+- "error" (red background, white text)
+##### backgroundColor [optional]
+Background color of Snackbar block. Will not be considered if any *snackbarVariant* is specified.
+
+type: string\
+default value: "#fff"\
+valid values:
+- 3-char hex ("#fff")
+- 6-char hex ("#ffffff")
+- rgb ("rgb(255, 255, 255)")
+- rgba ("rgba(255, 255, 255, 1)")
+- hsl ("hsl(0, 100%, 100%)")
+- hsla ("hsla(100, 100%, 50%, 1)")
+
+##### color [optional]
+Text color inside Snackbar block. Will not be considered if any *snackbarVariant* is specified.
+
+type: string\
+default value: "#000"\
+valid values:
+- 3-char hex ("#fff")
+- 6-char hex ("#ffffff")
+- rgb ("rgb(255, 255, 255)")
+- rgba ("rgba(255, 255, 255, 1)")
+- hsl ("hsl(0, 100%, 100%)")
+- hsla ("hsla(100, 100%, 50%, 1)")
+
+##### timeout [optional]
+Rewrites time after which Snackbar closes. Defined in milliseconds.\
+type: number\
+default value: 2000
+
+#### Example:
+```
+import React, { useState } from "react";
+import { Snackbar } from "spacebar-ui";
+
+export default function App() {
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+
+  const handleOpenSnackbar = () => {
+    setSnackbarOpen(true);
+  }
+
+  return (
+    <div>
+      <button onClick={handleOpenSnackbar}>Open Snackbar</button>
+      <Snackbar 
+        snackbarOpen={snackbarOpen} 
+        setSnackbarOpen={setCustomSnackbarOpen} 
+        snackbarMessage={"This is snackbar message."} 
+        timeout={5000} 
+        backgroundColor={"purple"} 
+        color={"#fff"} 
+      />
+    </div>
+  );
+}
+```
+Example available at [CodeSandbox](https://codesandbox.io/s/snackbar-d1p74?file=/src/App.js).
+
+## Recognition
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
