@@ -49,13 +49,19 @@ const ToggleSwitchLabel = styled.label(props => ({
   }
 }));
 
-const ToggleSwitch = ({backgroundChecked = "#4fbe79", backgroundUnchecked = "#bebebe", switchColor = "#fff"}) => {
+const ToggleSwitch = ({backgroundChecked = "#4fbe79", backgroundUnchecked = "#bebebe", checked = false, setChecked, switchColor = "#fff"}) => {
+  const handleChange = (e) => {
+    setChecked(e.target.checked)
+  }
+
   return (
     <>
       <ToggleSwitchWrapper>
         <ToggleSwitchInput
           backgroundChecked={isColor(backgroundChecked) && backgroundChecked}
+          checked={checked}
           id="toggle"
+          onChange={handleChange}
           type="checkbox"
         />
         <ToggleSwitchLabel
@@ -69,9 +75,11 @@ const ToggleSwitch = ({backgroundChecked = "#4fbe79", backgroundUnchecked = "#be
 };
 
 ToggleSwitch.propTypes = {
-  backgroundChecked: PropTypes.string.isRequired,
-  backgroundUnchecked: PropTypes.string.isRequired,
-  switchColor: PropTypes.string.isRequired,
+  backgroundChecked: PropTypes.string,
+  backgroundUnchecked: PropTypes.string,
+  checked: PropTypes.bool.isRequired,
+  setChecked: PropTypes.func.isRequired,
+  switchColor: PropTypes.string,
 };
 
 export default ToggleSwitch;

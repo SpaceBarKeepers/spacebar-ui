@@ -90,6 +90,17 @@ Example available at [CodeSandbox](https://codesandbox.io/s/snackbar-d1p74?file=
 #### Import component:
 `import { ToggleSwitch } from "spacebar-ui"`
 #### Attributes:
+##### checked [required]
+State of ToggleSwitch.
+
+type: boolean\
+default value: false\
+
+##### setChecked [required]
+Function to set state of ToggleSwitch
+
+type: function\
+
 ##### backgroundChecked [optional]
 Background color of ToggleSwitch block when checked.
 
@@ -135,10 +146,14 @@ import React, { useState } from "react";
 import {ToggleSwitch} from "spacebar-ui"
 
 export default function App() {
+        const [checked, setChecked] = useState(false)
+
   return (
     <ToggleSwitch 
     backgroundUnchecked={"#00f"} 
     backgroundChecked={"#f00"}
+    checked={checked}
+    setChecked={setChecked}
     switchColor={"#ff0"}
     />
   );
