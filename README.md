@@ -84,6 +84,67 @@ export default function App() {
 }
 ```
 Example available at [CodeSandbox](https://codesandbox.io/s/snackbar-d1p74?file=/src/App.js).
+---
+
+### ToggleSwitch
+#### Import component:
+`import { ToggleSwitch } from "spacebar-ui"`
+#### Attributes:
+##### backgroundChecked [optional]
+Background color of ToggleSwitch block when checked.
+
+type: string\
+default value: "#4fbe79"\
+valid values:
+- 3-char hex ("#fff")
+- 6-char hex ("#ffffff")
+- rgb ("rgb(255, 255, 255)")
+- rgba ("rgba(255, 255, 255, 1)")
+- hsl ("hsl(0, 100%, 100%)")
+- hsla ("hsla(100, 100%, 50%, 1)")
+
+##### backgroundUnchecked [optional]
+Background color of ToggleSwitch block when unchecked.
+
+type: string\
+default value: "#bebebe"\
+valid values:
+- 3-char hex ("#fff")
+- 6-char hex ("#ffffff")
+- rgb ("rgb(255, 255, 255)")
+- rgba ("rgba(255, 255, 255, 1)")
+- hsl ("hsl(0, 100%, 100%)")
+- hsla ("hsla(100, 100%, 50%, 1)")
+
+##### switchColor [optional]
+Background color of the toggle circle.
+
+type: string\
+default value: "#fff"\
+valid values:
+- 3-char hex ("#fff")
+- 6-char hex ("#ffffff")
+- rgb ("rgb(255, 255, 255)")
+- rgba ("rgba(255, 255, 255, 1)")
+- hsl ("hsl(0, 100%, 100%)")
+- hsla ("hsla(100, 100%, 50%, 1)")
+
+#### Example:
+```
+import React, { useState } from "react";
+import {ToggleSwitch} from "spacebar-ui"
+
+export default function App() {
+  return (
+    <ToggleSwitch 
+    backgroundUnchecked={"#00f"} 
+    backgroundChecked={"#f00"}
+    switchColor={"#ff0"}
+    />
+  );
+}
+```
+Example available at [CodeSandbox](https://codesandbox.io/s/toggleswitch-8k0in?file=/src/App.js).
 
 ## Recognition
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
