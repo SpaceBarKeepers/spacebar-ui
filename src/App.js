@@ -10,8 +10,10 @@ function App() {
   }, [checked])
 
   return (
-    <div className="App">
+    <div className="App" style={{display: "flex"}}>
+      {"ahoj"}
       <ToggleSwitch checked={checked} setChecked={setChecked}  />
+      {"ahoj"}
     </div>
   );
 }
