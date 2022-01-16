@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from "styled-components";
 import {isColor} from "../helpers/isColor";
 
-const ToggleSwitchWrapper = styled.div(props => ({
+const ToggleSwitchWrapper = styled.div(() => ({
   position: "relative",
 }));
 
