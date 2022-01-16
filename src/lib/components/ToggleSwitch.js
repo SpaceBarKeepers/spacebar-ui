@@ -6,7 +6,7 @@ import {isColor} from "../helpers/isColor";
 const ToggleSwitchWrapper = styled.div(() => ({
   position: "relative",
   marginLeft: 4,
-  marginRight: 16,
+  marginRight: 14,
 }));
 
 const ToggleSwitchInput = styled.input(props => ({
