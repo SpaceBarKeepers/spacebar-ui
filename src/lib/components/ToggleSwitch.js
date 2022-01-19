@@ -1,6 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from "styled-components";
+import { v4 as uuidv4 } from 'uuid';
 import {isColor} from "../helpers/isColor";
 
 const ToggleSwitchWrapper = styled.div(() => ({
@@ -56,6 +57,7 @@ const ToggleSwitch = ({backgroundChecked = "#4fbe79", backgroundUnchecked = "#be
   const handleChange = (e) => {
     setChecked(e.target.checked)
   }
+  const toggleId = uuidv4()
 
   return (
     <>
@@ -63,14 +65,14 @@ const ToggleSwitch = ({backgroundChecked = "#4fbe79", backgroundUnchecked = "#be
         <ToggleSwitchInput
           backgroundChecked={isColor(backgroundChecked) && backgroundChecked}
           checked={checked}
-          id="toggle"
+          id={toggleId}
           onChange={handleChange}
           switchColor={isColor(switchColor) && switchColor}
           switchImage={switchImage}
           type="checkbox"
         />
         <ToggleSwitchLabel
-          htmlFor="toggle"
+          htmlFor={toggleId}
           backgroundUnchecked={isColor(backgroundUnchecked) && backgroundUnchecked}
           switchColor={isColor(switchColor) && switchColor}
           switchImage={switchImage}
