@@ -18,6 +18,7 @@ const ToggleSwitchInput = styled.input(props => ({
   "&:checked + label": {
     background: props.backgroundChecked,
     "&:after": {
+      // background: props.switchImage ? `center/contain url(${"./img.png"}) ${props.switchColor}` : `${props.switchColor}`,
       content: "",
       display: "block",
       borderRadius: "50%",
@@ -40,18 +41,18 @@ const ToggleSwitchLabel = styled.label(props => ({
   cursor: "pointer",
   "&:after": {
     content: "''",
+    background: props.switchImage ? `center/contain url(${props.switchImage}) ${props.switchColor}` : `${props.switchColor}`,
     display: "block",
     borderRadius: "50%",
     width: "26px",
     height: "26px",
     margin: "4px",
-    background: props.switchColor,
     boxShadow: "1px 3px 3px 1px rgba(0, 0, 0, 0.2)",
     transition: "0.4s",
   }
 }));
 
-const ToggleSwitch = ({backgroundChecked = "#4fbe79", backgroundUnchecked = "#bebebe", checked = false, setChecked, switchColor = "#fff"}) => {
+const ToggleSwitch = ({backgroundChecked = "#4fbe79", backgroundUnchecked = "#bebebe", checked = false, setChecked, switchColor = "#fff", switchImage}) => {
   const handleChange = (e) => {
     setChecked(e.target.checked)
   }
@@ -64,12 +65,15 @@ const ToggleSwitch = ({backgroundChecked = "#4fbe79", backgroundUnchecked = "#be
           checked={checked}
           id="toggle"
           onChange={handleChange}
+          switchColor={isColor(switchColor) && switchColor}
+          switchImage={switchImage}
           type="checkbox"
         />
         <ToggleSwitchLabel
           htmlFor="toggle"
           backgroundUnchecked={isColor(backgroundUnchecked) && backgroundUnchecked}
           switchColor={isColor(switchColor) && switchColor}
+          switchImage={switchImage}
         />
       </ToggleSwitchWrapper>
     </>
@@ -82,6 +86,7 @@ ToggleSwitch.propTypes = {
   checked: PropTypes.bool.isRequired,
   setChecked: PropTypes.func.isRequired,
   switchColor: PropTypes.string,
+  switchImage: PropTypes.string,
 };
 
 export default ToggleSwitch;

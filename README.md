@@ -84,6 +84,7 @@ export default function App() {
 }
 ```
 Example available at [CodeSandbox](https://codesandbox.io/s/snackbar-d1p74?file=/src/App.js).
+
 ---
 
 ### ToggleSwitch
@@ -139,6 +140,12 @@ valid values:
 - rgba ("rgba(255, 255, 255, 1)")
 - hsl ("hsl(0, 100%, 100%)")
 - hsla ("hsla(100, 100%, 50%, 1)")
+- 
+##### switchImage [optional]
+Url of image/icon to put into toggle circle.
+
+type: string\
+default value: none\
 
 #### Example:
 ```
@@ -155,6 +162,7 @@ export default function App() {
     checked={checked}
     setChecked={setChecked}
     switchColor={"#ff0"}
+    switchImage={"https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Circle-icons-image.svg/1024px-Circle-icons-image.svg.png"}
     />
   );
 }
