@@ -2,10 +2,76 @@
 
 Created and maintained by [Space Bar Keepers](https://spacebarkeepers.com).
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Available Components](#available-components)
+    - [Avatar](#avatar)
+    - [Snackbar](#snackbar)
+    - [ToggleSwitch](#toggleswitch)
+
+
 ## Installation
 `npm i spacebar-ui`
 
 ## Available Components
+### Avatar
+#### Import component:
+`import { Avatar } from "spacebar-ui"`
+#### Attributes:
+##### backgroundColor [optional]
+Background color of Avatar in case of images with transparent background or in case od non-image child.
+
+type: string\
+default value: "#ccc"\
+valid values:
+- 3-char hex ("#fff")
+- 6-char hex ("#ffffff")
+- rgb ("rgb(255, 255, 255)")
+- rgba ("rgba(255, 255, 255, 1)")
+- hsl ("hsl(0, 100%, 100%)")
+- hsla ("hsla(100, 100%, 50%, 1)")
+##### size [optional]
+Size of the Avatar.\
+type: number or string\
+default value: 40\
+valid values:
+- number (50)
+- string ("50px", "10vh", "2rem", etc.)
+##### variant [optional]
+Variant of the Avatar.\
+type: string\
+default value: none\
+valid values:
+- "rounded" (square with rounded corners)
+- "circle" (circular shape)
+
+#### Example:
+```
+import React from "react";
+import { Avatar } from "spacebar-ui";
+
+export default function App() {
+  return (
+    <div>
+      <Avatar 
+        variant="rounded" 
+        backgroundColor="#f00"
+        size={60}
+      >
+        <img 
+          src={"https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Circle-icons-image.svg/1024px-Circle-icons-image.svg.png"} 
+          alt={"user avatar"} 
+        />
+      </Avatar>
+    </div>
+  );
+}
+```
+Example available at [CodeSandbox](https://codesandbox.io/s/avatar-s2ist?file=/src/App.js).
+
+---
+
 ### Snackbar
 #### Import component:
 `import { Snackbar } from "spacebar-ui"`

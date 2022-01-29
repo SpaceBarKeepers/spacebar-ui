@@ -39,7 +39,7 @@ const Snackbar = ({
       const timer = setTimeout(() => setSnackbarOpen(false), timeout);
       setLastTimer(timer)
     }
-  }, [backgroundColor, color, snackbarOpen, setSnackbarOpen, snackbarVariant, snackbarMessage, timeout])
+  }, [backgroundColor, color, snackbarOpen, setSnackbarOpen, snackbarVariant, snackbarMessage, timeout]) //eslint-disable-line
 
   return (
     snackbarOpen && (
